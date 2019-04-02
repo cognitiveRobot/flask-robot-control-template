@@ -1,4 +1,4 @@
-# iot-flask-template
+# flask-robot-control-template
 
 A simple and lightwight template to build an Internet of Things (IoT) application using Flask and MySQL. It also can be used to build a live RESTful API to deploy on raspberry pi.
 
