@@ -13,7 +13,6 @@ What things you need to install the software and how to install them
 ```
 Python
 Virtual Environment
-MySQL
 Your IDE
 ```
 ### Resources
@@ -28,7 +27,6 @@ The final file structure for the .
 ```
 iot-flask-template
 ├── app.py
-├── database.py
 ├── devices.py
 ├── README.md
 ├── requirments.txt
@@ -41,8 +39,6 @@ iot-flask-template
 │   │   ├── _messages.html
 │   │   └── _navbar.html
 │   ├── layout.html
-│   ├── login.html
-│   └── register.html
 ```
 Follow the steps below to get a development env up and running in a ubuntu(linux).
 
@@ -52,19 +48,19 @@ $ cd <path-to-the-folder>
 ```
 2. git clone the repository.
 ```
-$ git clone git@github.com:cognitiveRobot/iot-flask-template.git
+$ git clone git@github.com:cognitiveRobot/flask-robot-control-template.git
 ```
 3. Go inside the cloned folder.
 ```
-$ cd iot-flask-template
+$ cd flask-robot-control-template
 ```
 4. Create a Virtual Environment
 ```
-$ python3 -m venv v-iot
+$ python3 -m venv venv
 ```
 5. Activate the Virtual Environment
 ```
-$ souce v-iot/bin/activate
+$ souce venv/bin/activate
 ```
 6. Upgrade the pip
 ```
@@ -80,50 +76,7 @@ $ python app.py
 ```
 If all good so far, then follow next to know how to integrate the database for this app. If not, they raise an issue, I will reply asap.
 
-## Intregating the MySQL Database
 
-Considering you have installed MySQL in your system. Follow the steps below to integrate a MySQL database to store user details.
-
-1. Create a table named users in your database as follows.
-
-  ```
-mysql> describe users;
-+---------------+--------------+------+-----+-------------------+----------------+
-| Field         | Type         | Null | Key | Default           | Extra          |
-+---------------+--------------+------+-----+-------------------+----------------+
-| id            | int(11)      | NO   | PRI | NULL              | auto_increment |
-| name          | varchar(100) | YES  |     | NULL              |                |
-| email         | varchar(100) | YES  |     | NULL              |                |
-| username      | varchar(30)  | YES  |     | NULL              |                |
-| password      | varchar(100) | YES  |     | NULL              |                |
-| register_date | timestamp    | NO   |     | CURRENT_TIMESTAMP |                |
-+---------------+--------------+------+-----+-------------------+----------------+
-  ```
-2. Create database.py file in the project root director (i.e. app.py and database.py will sit in the same folder) and save the following content.
-```
-def dbusers():
-    db_users = {
-            'id':1,
-            'user':'<ur_mysql_username>',
-            'password':'<ur_username's_password>',
-            'db':'<your_database>',
-            'host':'localhost',
-            'cursor':'DictCursor'
-    }
-    return db_users
-```
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 ## Deployment
 
 Comming soon.
@@ -132,7 +85,6 @@ Comming soon.
 
 * [Python](https://www.python.org/) - For Server Side Program
 * [Flask](http://flask.pocoo.org/) - For Webapp Framework
-* [MySQL](https://www.mysql.com/) - For Database
 * [Materialize](https://materializecss.com) - For Front End
 
 ## Contributing
