@@ -1,0 +1,10 @@
+#Environment
+
+venv
+venv/
+venv*
+.vscode
+__pycache__/
+
+# Database file
+*.sql

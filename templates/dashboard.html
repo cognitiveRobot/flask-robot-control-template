@@ -1,0 +1,58 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Welcome to Dashboard</h1>
+
+    <h3>Sensor Data</h3>
+    <div class="row">
+      <!-- dummy sensors -->
+      <div class="col s12 m6 l6">
+        <div class="card">
+          <div class="card-content">
+            <!-- dummy sensor data -->
+            <p>Current Temperature</p>
+            <span>18.5</span>
+            <hr>
+
+          </div>
+        </div>        
+      </div>
+      <div class="col s12 m6 l6">
+        <div class="card">
+          <div class="card-content">
+            <!-- dummy sensor data -->
+            <p>Current Temperature</p>
+            <span>18.5</span>
+            <hr>
+
+          </div>
+        </div>        
+      </div>
+
+    </div>
+
+    <h3>List of the Devices</h3>
+    <div class="row">
+      {% for device in devices %}
+      <div class="col s12 m6 l6">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-panel grey lighten-2" >{{device.name}} is {{device.status}}.</div>
+            <hr>
+            {% if device['status'] == 'off' %}
+
+            <a class="btn disabled">OFF</a>
+     	     <a class="btn grey darken-2 waves-effect waves-light" href="device/{{device.id}}/on">ON</a>
+            {% else %}
+
+            <a class="btn grey darken-2 waves-effect waves-light" href="device/{{device.id}}/off">OFF</a>
+     	     <a class="btn disabled">ON</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+{% endblock %}
